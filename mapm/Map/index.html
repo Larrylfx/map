@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--初始化缩放比例为1.0,不允许用户进行缩放-->
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<title>车晓地图</title>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+		<script src="jquery-2.0.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="index.js" type="text/javascript" charset="utf-8"></script>
+		<!--引入百度api接口-->
+		<script type="text/javascript" charset="utf-8" src="http://api.map.baidu.com/api?v=2.0&ak=Hy39puRjkD52O5l2T0ne7ZpSepVNY3fN"></script>
+		<!--背景音乐 --> 
+		<script>
+	        var sound = new Audio();
+	        sound.src = '1.mp3';
+	        sound.currentTime = sessionStorage.getItem('bgm');
+	        sound.loop = true;
+	        sound.play();
+	        window.onunload = function () {
+	            sessionStorage.setItem('bgm',sound.currentTime)
+	        }
+   		</script>
+   		<script src="animate.js" type="text/javascript" charset="utf-8"></script>
+   		<style type="text/css">
+   			canvas{
+   				width: 100%;
+   				height: 80%;
+   				position: absolute;
+   				left: 0;
+   				top: 20%;	
+   			}
+   		</style>
+    
+	</head>
+	<body>
+		<!--地图头部展开/收缩  搜索的制作-->
+		
+		<div id="myMapTop">
+			
+			<a href="javascript:void();" id="show">
+				路线工具(展开/收缩)
+			</a>
+			<canvas ></canvas>
+			<div class="mapShow">
+				<h3>搜索地址</h3>
+				<input id="local" placeholder="可搜索模糊的地址"/>
+				<span>-&nbsp;-</span>
+				<a id="city" href="javascript:void(0);">
+					点击搜索
+				</a>
+				<h3>搜索行车路径</h3>
+				<input id="star" placeholder="开始地址"/>
+				<span>-&nbsp;-</span>
+				<input id="end" placeholder="结束地址"/>
+				<span>-&nbsp;-</span>
+				<a  id="search" href="javascript:void(0);">
+					点击搜索
+				</a>
+				
+				<h3>搜索公交路径</h3>
+				<input id="bStar" placeholder="公交起点地址" />
+				<span>-&nbsp;-</span>
+				<input id="bEnd" placeholder="公交结束地址" />
+				<a  id="search-bus" href="javascript:void(0);">
+					点击搜索
+				</a>
+				
+				<h3>搜索步行路径</h3>
+				<input id="wStar" placeholder="步行起点地址" />
+				<span>-&nbsp;-</span>
+				<input id="wEnd" placeholder="步行结束地址" />
+				<a  id="search-walk" href="javascript:void(0);">
+					点击搜索
+				</a>
+			</div>
+		</div>
+		<div id="container">
+			
+		</div>
+		<div id="panel">
+			
+		</div>
+	</body>
+</html>
+

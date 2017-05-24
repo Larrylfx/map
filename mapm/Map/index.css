@@ -1,0 +1,77 @@
+/*满屏地图*/
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#container{
+	height: 100%;
+}
+/*地图头部展开\收缩  搜索功能样式*/
+#myMapTop{
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	width: 60%;
+	padding: 20px;
+	background: rgba(100,100,100,0.8);
+	
+}
+#myMapTop a{
+	display: inline-block;
+	text-align: center;
+	padding: 6px 20px;
+	color: #fff;
+	background: #BE0000;
+	text-decoration: none;
+	position: relative;
+	z-index: 20;
+}
+#myMapTop #show{
+    display: block;
+}
+#myMapTop input{
+    font-size: 14px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    position: relative;
+	z-index: 20;
+}
+.mapShow h3{
+	margin: 20px 0 10px;
+}
+
+
+#panel{
+	position: absolute;
+	background-color: white;
+	max-height: 90%;
+	overflow-y: auto;
+	top: 10px;
+	right: 10px;
+	width: 280px;
+}
+
+.infowindow-content{
+    padding:12px 8px;
+    color:#fff;
+    background:#ccc;
+}
+
+h3{
+    font-family: "Microsoft YaHei";
+	!important;
+}
+.mapShow{
+    display:none;
+}
